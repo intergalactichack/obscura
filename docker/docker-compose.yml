@@ -39,15 +39,13 @@ services:
 
   grafana:
     container_name: obscura_grafana
-    image: "grafana/grafana"
+    image: "grafana/grafana:9.4.7"
     networks:
       - obscura
     ports:
       - "3000:3000"
     volumes:
       - grafana:/var/lib/grafana
-    environment:
-      - GF_INSTALL_PLUGINS=grafana-clock-panel,natel-discrete-panel,briangann-gauge-panel,vonage-status-panel,neocat-cal-heatmap-panel
     restart: on-failure
 
 volumes:
