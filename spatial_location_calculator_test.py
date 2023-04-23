@@ -2,6 +2,9 @@
 
 import cv2
 import depthai as dai
+import paho.mqtt.publish as publish
+import time
+import json
 
 stepSize = 0.05
 
@@ -45,8 +48,8 @@ monoRight.setBoardSocket(dai.CameraBoardSocket.RIGHT)
 # stereo.setSubpixel(subpixel)
 
 # Options: MEDIAN_OFF, KERNEL_3x3, KERNEL_5x5, KERNEL_7x7 (default)
-stereo.setDefaultProfilePreset(dai.node.StereoDepth.PresetMode.HIGH_DENSITY)
-stereo.initialConfig.setMedianFilter(dai.MedianFilter.KERNEL_7x7)
+stereo.setDefaultProfilePreset(dai.node.StereoDepth.PresetMode.HIGH_ACCURACY)
+stereo.initialConfig.setMedianFilter(dai.MedianFilter.KERNEL_5x5)
 stereo.setLeftRightCheck(lr_check)
 stereo.setExtendedDisparity(extended_disparity)
 stereo.setSubpixel(subpixel)
@@ -112,6 +115,8 @@ with dai.Device(pipeline, usb2Mode=True) as device:
             cv2.putText(depthFrameColor, f"X: {int(depthData.spatialCoordinates.x)} mm", (xmin + 10, ymin + 20), fontType, 0.5, 255)
             cv2.putText(depthFrameColor, f"Y: {int(depthData.spatialCoordinates.y)} mm", (xmin + 10, ymin + 35), fontType, 0.5, 255)
             cv2.putText(depthFrameColor, f"Z: {int(depthData.spatialCoordinates.z)} mm", (xmin + 10, ymin + 50), fontType, 0.5, 255)
+            distance = int(depthData.spatialCoordinates.z))
+
         # Show the frame
         cv2.imshow("depth", depthFrameColor)
 
