@@ -1,0 +1,816 @@
+[
+    {
+        "id": "f6f2187d.f17ca8",
+        "type": "tab",
+        "label": "obscura",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "ccae6555b86c65d2",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "a889730833064bbf",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "be0e2cd213c898b0",
+        "type": "ui_tab",
+        "name": "time",
+        "icon": "dashboard",
+        "disabled": true,
+        "hidden": false
+    },
+    {
+        "id": "7a6c2b47a0e5736a",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "mosquitto",
+        "port": "1883",
+        "clientid": "nr5",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "5",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "ec72b960ef0e22af",
+        "type": "ui_group",
+        "name": "obscura dashboard gauge",
+        "tab": "ccae6555b86c65d2",
+        "order": 1,
+        "disp": false,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "c83abe4e4bd14322",
+        "type": "ui_group",
+        "name": "clock",
+        "tab": "be0e2cd213c898b0",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "535bd6d9c1732e5c",
+        "type": "influxdb",
+        "hostname": "nfluxdb",
+        "port": "8086",
+        "protocol": "http",
+        "database": "database",
+        "name": "obscura_influxdb",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "2.0",
+        "url": "http://obscura_influxdb:8086",
+        "rejectUnauthorized": true
+    },
+    {
+        "id": "594a1f1f60ba7eaf",
+        "type": "ui_group",
+        "name": "obscura dashboard numberdisplay",
+        "tab": "ccae6555b86c65d2",
+        "order": 2,
+        "disp": false,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "6ddfdff19030e0ef",
+        "type": "ui_group",
+        "name": "obscura dashboard visualdistance",
+        "tab": "ccae6555b86c65d2",
+        "order": 3,
+        "disp": false,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "60be6c2c7e00ae86",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "name": "minute_clock_generator",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "60",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.0",
+        "topic": "time",
+        "payload": "",
+        "payloadType": "date",
+        "x": 190,
+        "y": 200,
+        "wires": [
+            [
+                "232c8e399091fb92",
+                "c3e0626f77929a4e",
+                "932cebca213a7130",
+                "93a1586d32cc5f36"
+            ]
+        ]
+    },
+    {
+        "id": "232c8e399091fb92",
+        "type": "mqtt out",
+        "z": "f6f2187d.f17ca8",
+        "name": "minute-clock-mqtt-sender",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "7a6c2b47a0e5736a",
+        "x": 490,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "c3e0626f77929a4e",
+        "type": "ui_text",
+        "z": "f6f2187d.f17ca8",
+        "group": "c83abe4e4bd14322",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "clock-ts-txt",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "className": "",
+        "x": 450,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "932cebca213a7130",
+        "type": "ui_chart",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "group": "c83abe4e4bd14322",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "clock-ts-chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 450,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "93a1586d32cc5f36",
+        "type": "ui_gauge",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "group": "c83abe4e4bd14322",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "clock-ts-gauge",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "10000000000000",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 460,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "5035d1988a8df887",
+        "type": "mqtt in",
+        "z": "f6f2187d.f17ca8",
+        "name": "sensor-obscura-visualdistance",
+        "topic": "obscura-visualdistance",
+        "qos": "0",
+        "datatype": "json",
+        "broker": "7a6c2b47a0e5736a",
+        "nl": false,
+        "rap": true,
+        "rh": "0",
+        "inputs": 0,
+        "x": 280,
+        "y": 740,
+        "wires": [
+            [
+                "46c192906aead275",
+                "76b98c2ddc5d0171",
+                "6fbd0f557a04b5f1",
+                "deac478ba594efcb"
+            ]
+        ]
+    },
+    {
+        "id": "46c192906aead275",
+        "type": "ui_text",
+        "z": "f6f2187d.f17ca8",
+        "group": "6ddfdff19030e0ef",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "obscura-visualdistance-text",
+        "label": "measurement",
+        "format": "{{msg.payload.measurement}}",
+        "layout": "row-center",
+        "className": "",
+        "x": 880,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "76b98c2ddc5d0171",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "obscura-visualdistance-debug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 650,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "8de968d2500bed95",
+        "type": "ui_chart",
+        "z": "f6f2187d.f17ca8",
+        "name": "obscura-visualdistance-graph",
+        "group": "6ddfdff19030e0ef",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "obscura-visualdistance",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "blank",
+        "dot": true,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "5",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#62a0ea",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 880,
+        "y": 780,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6fbd0f557a04b5f1",
+        "type": "change",
+        "z": "f6f2187d.f17ca8",
+        "name": "select measurement",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.measurement",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 620,
+        "y": 780,
+        "wires": [
+            [
+                "8de968d2500bed95"
+            ]
+        ]
+    },
+    {
+        "id": "deac478ba594efcb",
+        "type": "influxdb out",
+        "z": "f6f2187d.f17ca8",
+        "influxdb": "535bd6d9c1732e5c",
+        "name": "obscura-visualdistance-influxdb",
+        "measurement": "obscura-visualdistance-measurement",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "s",
+        "retentionPolicyV18Flux": "",
+        "org": "obscured",
+        "bucket": "obscured",
+        "x": 650,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "d8e7cde026f81607",
+        "type": "mqtt in",
+        "z": "f6f2187d.f17ca8",
+        "name": "sensor-obscura-gauge",
+        "topic": "obscura-gauge",
+        "qos": "0",
+        "datatype": "json",
+        "broker": "7a6c2b47a0e5736a",
+        "nl": false,
+        "rap": true,
+        "rh": "0",
+        "inputs": 0,
+        "x": 260,
+        "y": 1020,
+        "wires": [
+            [
+                "190c66139cca8140",
+                "f69826f723702d73",
+                "ab0e158cf13eaa83",
+                "eb29876faa2dcc65"
+            ]
+        ]
+    },
+    {
+        "id": "190c66139cca8140",
+        "type": "ui_text",
+        "z": "f6f2187d.f17ca8",
+        "group": "ec72b960ef0e22af",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "obscura-gauge-text",
+        "label": "measurement",
+        "format": "{{msg.payload.measurement}}",
+        "layout": "row-center",
+        "className": "",
+        "x": 850,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "f69826f723702d73",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "obscura-gauge-debug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "bbe0e67cfc207d1a",
+        "type": "ui_chart",
+        "z": "f6f2187d.f17ca8",
+        "name": "obscura-gauge-graph",
+        "group": "ec72b960ef0e22af",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "obscura-gauge",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "blank",
+        "dot": true,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "5",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#62a0ea",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 860,
+        "y": 1060,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ab0e158cf13eaa83",
+        "type": "change",
+        "z": "f6f2187d.f17ca8",
+        "name": "select measurement",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.measurement",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 620,
+        "y": 1060,
+        "wires": [
+            [
+                "bbe0e67cfc207d1a",
+                "b96ca1a9105df7d6"
+            ]
+        ]
+    },
+    {
+        "id": "eb29876faa2dcc65",
+        "type": "influxdb out",
+        "z": "f6f2187d.f17ca8",
+        "influxdb": "535bd6d9c1732e5c",
+        "name": "obscura-numberdisplay-influxdb",
+        "measurement": "obscura-numberdisplay-measurement",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "s",
+        "retentionPolicyV18Flux": "",
+        "org": "obscured",
+        "bucket": "obscured",
+        "x": 650,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "b96ca1a9105df7d6",
+        "type": "ui_gauge",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "group": "ec72b960ef0e22af",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "obscura-gauge-gauge",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "360",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "300",
+        "seg2": "330",
+        "diff": false,
+        "className": "",
+        "x": 860,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "86ea2b2a5b724938",
+        "type": "mqtt in",
+        "z": "f6f2187d.f17ca8",
+        "name": "sensor-obscura-numberdisplay",
+        "topic": "obscura-numberdisplay",
+        "qos": "0",
+        "datatype": "json",
+        "broker": "7a6c2b47a0e5736a",
+        "nl": false,
+        "rap": true,
+        "rh": "0",
+        "inputs": 0,
+        "x": 290,
+        "y": 1340,
+        "wires": [
+            [
+                "c216b519b60fe6b5",
+                "86e425e000238a7c",
+                "dbe714f7d45bc6bf",
+                "e82b425fb0ac20b7"
+            ]
+        ]
+    },
+    {
+        "id": "c216b519b60fe6b5",
+        "type": "ui_text",
+        "z": "f6f2187d.f17ca8",
+        "group": "594a1f1f60ba7eaf",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "obscura-numberdisplay-text",
+        "label": "measurement",
+        "format": "{{msg.payload.measurement}}",
+        "layout": "row-center",
+        "className": "",
+        "x": 880,
+        "y": 1340,
+        "wires": []
+    },
+    {
+        "id": "86e425e000238a7c",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "obscura-numberdisplay-debug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 650,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "8ec4eba42af8f903",
+        "type": "ui_chart",
+        "z": "f6f2187d.f17ca8",
+        "name": "obscura-numberdisplay-graph",
+        "group": "594a1f1f60ba7eaf",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "obscura-numberdisplay",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "blank",
+        "dot": true,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "5",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#62a0ea",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 890,
+        "y": 1380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dbe714f7d45bc6bf",
+        "type": "change",
+        "z": "f6f2187d.f17ca8",
+        "name": "select measurement",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.measurement",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 620,
+        "y": 1380,
+        "wires": [
+            [
+                "8ec4eba42af8f903"
+            ]
+        ]
+    },
+    {
+        "id": "e82b425fb0ac20b7",
+        "type": "influxdb out",
+        "z": "f6f2187d.f17ca8",
+        "influxdb": "535bd6d9c1732e5c",
+        "name": "obscura-numberdisplay-influxdb",
+        "measurement": "obscura-numberdisplay-measurement",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "s",
+        "retentionPolicyV18Flux": "",
+        "org": "obscured",
+        "bucket": "obscured",
+        "x": 650,
+        "y": 1440,
+        "wires": []
+    }
+]
