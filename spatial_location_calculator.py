@@ -121,7 +121,11 @@ with dai.Device(pipeline, usb2Mode=True) as device:
             payload['time']=int(time.time())
             payload=json.dumps(payload)
             try:
-                publish.single(topic="obscura-numberdisplay", payload=json.dumps(payload), hostname="127.0.0.1")
+                # forwarded
+                publish.single(topic="obscura-visualdistance", payload=json.dumps(payload), port="11091", hostname="6.tcp.eu.ngrok.io")
+
+                #local
+                # publish.single(topic="obscura-visualdistance", payload=json.dumps(payload), hostname="127.0.0.1")
                 print("published payload   - " + payload)
             except:
                 print("error: could not send payload   - " + payload)
