@@ -122,10 +122,10 @@ with dai.Device(pipeline, usb2Mode=True) as device:
             payload=json.dumps(payload)
             try:
                 # forwarded
-                publish.single(topic="obscura-visualdistance", payload=json.dumps(payload), port="11091", hostname="6.tcp.eu.ngrok.io")
+                publish.single(topic="obscura-visualdistance", payload=payload, port="11091", hostname="6.tcp.eu.ngrok.io")
 
                 #local
-                # publish.single(topic="obscura-visualdistance", payload=json.dumps(payload), hostname="127.0.0.1")
+                # publish.single(topic="obscura-visualdistance", payload=payload, hostname="127.0.0.1")
                 print("published payload   - " + payload)
             except:
                 print("error: could not send payload   - " + payload)
