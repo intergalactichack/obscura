@@ -117,6 +117,15 @@ with dai.Device(pipeline, usb2Mode=True) as device:
             cv2.putText(depthFrameColor, f"Z: {int(depthData.spatialCoordinates.z)} mm", (xmin + 10, ymin + 50), fontType, 0.5, 255)
             distance = int(depthData.spatialCoordinates.z))
 
+            payload['distance']=distance
+            payload['time']=int(time.time())
+            payload=json.dumps(payload)
+            try:
+                publish.single(topic="obscura-numberdisplay", payload=json.dumps(payload), hostname="127.0.0.1")
+                print("published payload   - " + payload)
+            except:
+                print("error: could not send payload   - " + payload)
+
         # Show the frame
         cv2.imshow("depth", depthFrameColor)
 
